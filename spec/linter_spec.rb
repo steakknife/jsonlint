@@ -20,11 +20,6 @@ describe 'JsonLint::Linter' do
     expect(linter.errors_count).to eq(1)
   end
 
-  it 'should be unhappy with JSON that has overlapping keys' do
-    expect(linter.check(spec_data('overlapping_keys.json'))).to be(false)
-    expect(linter.check(spec_data('deep_overlap.json'))).to be(false)
-  end
-
   it 'should be able to check an IO stream' do
     valid_stream = File.open(spec_data('valid.json'))
     expect(linter.check_stream(valid_stream)).to be(true)

@@ -17,8 +17,14 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'oj', '~> 2'
   spec.add_dependency 'trollop', '~> 2'
+  spec.add_dependency 'multi_json', '~> 1.12.1'
+  if RUBY_PLATFORM == 'java'
+    spec.platform = 'java'
+    spec.add_dependency 'jrjackson', '~> 2.7.3'
+  else
+    spec.add_dependency 'oj', '~> 2'
+  end
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
