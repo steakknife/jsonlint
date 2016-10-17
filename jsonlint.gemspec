@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'multi_json', '~> 1.12.1'
   if RUBY_PLATFORM == 'java'
     spec.platform = 'java'
-    spec.add_dependency 'jrjackson', '~> 2.7.3'
+    spec.add_dependency 'jrjackson', '~> 0.4.0'
   else
     spec.add_dependency 'oj', '~> 2'
   end
